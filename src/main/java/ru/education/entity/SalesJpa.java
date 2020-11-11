@@ -1,15 +1,11 @@
 package ru.education.entity;
 
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import ru.education.jpa.Product;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "sales")
-@NoArgsConstructor
 public class SalesJpa {
 
     @Id
@@ -27,6 +23,15 @@ public class SalesJpa {
 
     @Column(name = "price")
     private int price;
+
+    public SalesJpa() { }
+
+    public SalesJpa(int id, Product product, int count, int price) {
+        this.id = id;
+        this.product = product;
+        this.count = count;
+        this.price = price;
+    }
 
     public int getId() {
         return id;

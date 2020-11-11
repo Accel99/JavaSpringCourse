@@ -1,4 +1,4 @@
-package ru.education.jpa;
+package ru.education.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +9,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product")
 @NoArgsConstructor
-@Getter
-@Setter
 public class Product {
 
     @Id
@@ -21,4 +19,20 @@ public class Product {
 
     @Column(name = "name")
     private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

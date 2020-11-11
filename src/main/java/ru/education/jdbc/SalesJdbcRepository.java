@@ -3,9 +3,7 @@ package ru.education.jdbc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
 import ru.education.entity.SalesJdbc;
-import ru.education.jpa.Product;
 
 import java.util.List;
 

@@ -6,6 +6,4 @@ import ru.education.entity.SalesJpa;
 
 @Repository
 public interface SalesJpaRepository extends JpaRepository<SalesJpa, Integer> {
-
-    SalesJpa getById(int id);
 }

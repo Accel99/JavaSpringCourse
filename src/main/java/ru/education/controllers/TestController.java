@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.education.entity.SalesJdbc;
 import ru.education.entity.SalesJpa;
 import ru.education.jdbc.SalesJdbcRepository;
-import ru.education.jpa.Product;
+import ru.education.entity.Product;
 import ru.education.jpa.ProductRepository;
 import ru.education.jpa.SalesJpaRepository;
 import ru.education.model.Formatter;
@@ -74,6 +74,6 @@ public class TestController {
 
     @PostMapping("/jpa/sales/id")
     public SalesJpa getSalesById(@RequestBody SalesJpa salesJpa) {
-        return salesJpaRepository.getById(salesJpa.getId());
+        return salesJpaRepository.findById(salesJpa.getId()).get();
     }
 }
