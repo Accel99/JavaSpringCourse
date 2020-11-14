@@ -38,7 +38,7 @@ public class SalesRepositoryTest {
     public void addSalesTest() {
         Product product = new Product();
         product.setId(2);
-        SalesJpa sales = new SalesJpa(7, product, 99, 999);
+        SalesJpa sales = new SalesJpa(0, product, 99, 999);
         salesJpaRepository.save(sales);
 
         SalesJpa sales1 = salesJpaRepository.findById(7).get();

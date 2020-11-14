@@ -1,15 +1,12 @@
 package ru.education.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "product")
-@NoArgsConstructor
 public class Product {
+
+    public static String TYPE_NAME = "Продукт";
 
     @Id
     @Column(name = "id", nullable = false)
@@ -19,6 +16,13 @@ public class Product {
 
     @Column(name = "name")
     private String name;
+
+    public Product() { }
+
+    public Product(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;

@@ -33,5 +33,3 @@ CREATE TABLE sales
 ALTER TABLE sales
     ADD FOREIGN KEY (product_id)
     REFERENCES product(id);
-
--- DEFAULT sales_id_seq.nextval

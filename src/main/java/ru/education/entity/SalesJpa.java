@@ -1,12 +1,12 @@
 package ru.education.entity;
 
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "sales")
 public class SalesJpa {
+
+    public static String TYPE_NAME = "Продажа";
 
     @Id
     @Column(name = "id", nullable = false)
@@ -33,7 +33,7 @@ public class SalesJpa {
         this.price = price;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -49,7 +49,7 @@ public class SalesJpa {
         this.product = product;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
@@ -57,7 +57,7 @@ public class SalesJpa {
         this.count = count;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
