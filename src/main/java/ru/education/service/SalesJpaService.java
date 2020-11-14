@@ -56,15 +56,15 @@ public class SalesJpaService {
 
     public SalesJpa create(SalesJpa salesJpa) {
         if (salesJpa == null) {
-            throw new EntityAlreadyExistsException("Создаваемый объект не может быть null");
+            throw new EntityIllegalArgumentException("Создаваемый объект не может быть null");
         }
 
         if (salesJpa.getProduct() == null) {
-            throw new EntityAlreadyExistsException("Продукт не может быть null");
+            throw new EntityIllegalArgumentException("Продукт не может быть null");
         }
 
         if (salesJpa.getProduct().getId() == null) {
-            throw new EntityAlreadyExistsException("Идентификатор продукта не может быть null");
+            throw new EntityIllegalArgumentException("Идентификатор продукта не может быть null");
         }
 
         try {
@@ -74,11 +74,11 @@ public class SalesJpaService {
         }
 
         if (salesJpa.getCount() == null) {
-            throw new EntityAlreadyExistsException("Количество проданного продукта не может быть null");
+            throw new EntityIllegalArgumentException("Количество проданного продукта не может быть null");
         }
 
         if (salesJpa.getPrice() == null) {
-            throw new EntityAlreadyExistsException("Цена проданного продукта не может быть null");
+            throw new EntityIllegalArgumentException("Цена проданного продукта не может быть null");
         }
 
         return salesJpaRepository.save(salesJpa);

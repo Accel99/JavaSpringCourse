@@ -57,11 +57,11 @@ public class ProductService {
 
     public Product create(Product product) {
         if (product == null) {
-            throw new EntityAlreadyExistsException("Создаваемый объект не может быть null");
+            throw new EntityIllegalArgumentException("Создаваемый объект не может быть null");
         }
 
         if (product.getName() == null || product.getName().isEmpty()) {
-            throw new EntityAlreadyExistsException("Имя продукта не может быть пустым");
+            throw new EntityIllegalArgumentException("Имя продукта не может быть пустым");
         }
 
         return productRepository.save(product);
