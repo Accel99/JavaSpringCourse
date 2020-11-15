@@ -2,6 +2,7 @@ package ru.education.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.education.annotation.Loggable;
 import ru.education.entity.Product;
 import ru.education.entity.SalesJpa;
 import ru.education.exceptions.EntityHasDetailsException;
@@ -27,10 +28,12 @@ public class DefaultProductService implements ProductService {
         this.salesJpaRepository = salesJpaRepository;
     }
 
+    @Loggable
     public List<Product> findAll() {
         return productRepository.findAll();
     }
 
+    @Loggable
     public Product findById(Object id) {
         Product product;
 
@@ -55,6 +58,7 @@ public class DefaultProductService implements ProductService {
         return product;
     }
 
+    @Loggable
     public Product create(Product product) {
         if (product == null) {
             throw new EntityIllegalArgumentException("Создаваемый объект не может быть null");
@@ -67,6 +71,7 @@ public class DefaultProductService implements ProductService {
         return productRepository.save(product);
     }
 
+    @Loggable
     public void delete(Object id) {
         Product product = findById(id);
         List<SalesJpa> salesJpaList = salesJpaRepository.findByProduct(product);
